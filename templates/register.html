@@ -1,0 +1,93 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link href="{% static 'styles/reg.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <center>
+    <form class="form" action="{% url 'registerpage' %}" method="post">
+        {% csrf_token %}
+        <p class="title">Register </p>
+        <p class="message">Signup now. </p>
+            <div class="flex">
+            <label>
+                <input class="input" type="text" placeholder="" required="" name="fname">
+                <span>Firstname</span>
+            </label>
+    
+            <label>
+                <input class="input" type="text" placeholder="" required="" name="lname">
+                <span>Lastname</span>
+            </label> <br>
+        </div>  
+        <label>
+            <input class="input" type="date" placeholder="DOB" required="" name="dob">
+            <span></span>
+        </label> 
+
+        <label>
+            <input class="input" type="textarea" placeholder="" required="" name="address">
+            <span>Address</span>
+        </label>
+
+        <label>
+            <input class="input" type="number" placeholder="" required="" name="phone">
+            <span>Phone</span>
+        </label>
+        
+                
+        <label>
+            <input class="input" type="email" placeholder="" required="" name="email">
+            <span>Email</span>
+        </label> 
+        <label>
+            <input class="input" type="text" placeholder="" required="" name="uname">
+            <span>Username</span>
+        </label> 
+            
+        <label>
+            <input class="input" type="password" id="pass" placeholder="" required="" name="password">
+            <span>Password</span>
+        </label>
+        <label>
+            <input class="input" type="password" id="confirm_pass" placeholder="" required="" name="cpassword" >
+            <span>Confirm password</span>
+        </label>
+        <label >Gender
+            <input  type="radio" name="gender" value="male"> Male
+            <input  type="radio" name="gender" value="female"> Female
+            <input  type="radio" name="gender" value="others"> Others  </label>  
+            <label>
+        <button class="submit" onclick="validate_password()">Submit</button>
+        
+    </form>
+</center>
+<script>
+    function validate_password() {
+
+        var pass = document.getElementById('pass').value;
+        var confirm_pass = document.getElementById('confirm_pass').value;
+        if (pass != confirm_pass) {
+            
+            alert("password not matched");
+            
+        } else {
+            
+        }
+    }
+
+    function wrong_pass_alert() {
+        if (document.getElementById('pass').value != "" &&
+            document.getElementById('confirm_pass').value != "") {
+            alert("Your response is submitted");
+        } else {
+            alert("Please fill all the fields");
+        }
+    }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    
+    <link href="{% static 'styles/bootstrap.min.css' %}" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+		<link href="{% static 'styles/tiny-slider.css' %}" rel="stylesheet">
+		<link href="{% static 'styles/style.css' %}" rel="stylesheet">
+		<title>Furni Free Bootstrap 5 Template for Furniture and Interior Design Websites by Untree.co </title>
+
+  </head>
+  <body>
+    <div class="collapse navbar-collapse" id="navbarsFurni">
+      <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'indexpage' %}">Home</a>
+        </li>
+        <li><a class="nav-link" href="{% url 'shoppage' %}">Shop</a></li>
+        <li><a class="nav-link" href="{% url 'loginpage' %}">login</a></li>
+        <li><a class="nav-link" href="{% url 'registerpage' %}">Register</a></li>
+        <li><a class="nav-link" href="blog.html">Blog</a></li>
+      </ul>
+
+      <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+        <li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+        <li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+      </ul>
+    </div>
+  </body>
+</html>
